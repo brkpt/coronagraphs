@@ -1,0 +1,56 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+logs
+
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/.g8
+/RUNNING_PID
+
+# compiled output
+clientui/dist
+clientui/tmp
+clientui/out-tsc
+# Only exists if Bazel was run
+clientui/bazel-out
+
+# dependencies
+clientui/node_modules
+
+# profiling files
+clientui/chrome-profiler-events*.json
+clientui/speed-measure-plugin*.json
+
+# IDEs and editors
+clientui/.idea
+clientui/.project
+clientui/.classpath
+clientui/.c9/
+clientui/*.launch
+clientui/.settings/
+clientui/*.sublime-workspace
+
+# IDE - VSCode
+clientui/.vscode/*
+!clientui/.vscode/settings.json
+!clientui/.vscode/tasks.json
+!clientui/.vscode/launch.json
+!clientui/.vscode/extensions.json
+clientui/.history/*
+
+# misc
+clientui/.sass-cache
+clientui/connect.lock
+clientui/coverage
+clientui/libpeerconnection.log
+clientui/npm-debug.log
+clientui/yarn-error.log
+clientui/testem.log
+clientui/typings
+
+# System Files
+clientui/.DS_Store
+clientui/Thumbs.db

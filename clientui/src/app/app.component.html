@@ -1,0 +1,17 @@
+<div class='wrapper'>
+  <div class='selectorContainer'>
+      <a class='tablink' routerLink='/countrydeath' routerLinkActive='active'>Country Deaths</a>
+      <a class='tablink' routerLink='/countrydaily' routerLinkActive='active'>Country Daily</a>
+      <a class='tablink' routerLink='/countrytesting' routerLinkActive='active'>Country Testing</a>
+      <a class='tablink' routerLink='/statedeath' routerLinkActive='active'>Utah Daily Deaths</a>
+      <a class='tablink' routerLink='/statetesting' routerLinkActive='active'>Utah Testing</a>
+      <a class='tablink' routerLink='/statehospitalized' routerLinkActive='active'>Utah Hospitalized Current</a>
+      <a class='tablink' routerLink='/stateicu' routerLinkActive='active'>Utah ICU Current</a>
+  </div>
+  <div class='displayContainer'>
+    <div class='headerContainer'>
+      <div class='headerText'>Covid-19 Graphs</div>
+    </div>
+    <div class='graphContainer'><router-outlet></router-outlet></div>
+  </div>
+</div>
