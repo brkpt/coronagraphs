@@ -41,14 +41,6 @@ const routes: Routes = [
     component: StateHospitalizedComponent
   },
   {
-    path: 'stateicu',
-    component: StateIcuComponent
-  },
-  {
-    path: 'stateventilator',
-    component: StateVentilatorComponent
-  },
-  {
     path: '',
     redirectTo: '/countrydeath',
     pathMatch: 'full'

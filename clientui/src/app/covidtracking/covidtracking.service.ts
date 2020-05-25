@@ -83,8 +83,8 @@ export interface StateHistorical {
     providedIn: 'root'
 })
 export class CovidTrackingService {
-  //private countryUrl = 'http://ec2-3-95-10-127.compute-1.amazonaws.com:9000';
-  private countryUrl = 'http://localhost:9000';
+  private dataHost = 'http://ec2-3-95-10-127.compute-1.amazonaws.com:9000';
+  //private dataHost = 'http://localhost:9000';
   private usData = '/api/us/current';
   private usDaily = '/api/us/daily';
   private stateHistorical = '/api/states/historical';
@@ -92,19 +92,19 @@ export class CovidTrackingService {
   constructor(private http: HttpClient) {}
 
   public getCountryData(): Observable<USDailySnapshot[]> { 
-    return this.http.get<USDailySnapshot[]>(this.countryUrl + this.usData);
+    return this.http.get<USDailySnapshot[]>(this.dataHost + this.usData);
   }
 
   public getCountryDaily(): Observable<USHistoricalDaily[]> {
-    return this.http.get<USHistoricalDaily[]>(this.countryUrl + this.usDaily);
+    return this.http.get<USHistoricalDaily[]>(this.dataHost + this.usDaily);
   }
 
   public getStateHistorical(): Observable<StateHistorical[]> {
-    return this.http.get<StateHistorical[]>(this.stateHistorical);
+    return this.http.get<StateHistorical[]>(this.dataHost + this.stateHistorical);
   }
 
   public getHistoricalByState(state: string): Observable<StateHistorical[]> {
     let params = new HttpParams().set('state', 'ut');
-    return this.http.get<StateHistorical[]>(this.stateHistorical, { params });
+    return this.http.get<StateHistorical[]>(this.dataHost + this.stateHistorical, { params });
   }
 }

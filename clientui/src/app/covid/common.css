@@ -1,15 +1,14 @@
-/*
 @font-face {
     font-family: sourceSansPro;
-    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com:9000/assets/fonts/SourceSansPro-Light.ttf)
+    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com:9000/fonts/SourceSansPro-Light.ttf)
 }
 
 @font-face { 
     font-family: sourceSansProBold;
-    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com:9000/assets/fonts/SourceSansPro-Bold.ttf)
+    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com:9000/fonts/SourceSansPro-Bold.ttf)
 }
-*/
 
+/*
 @font-face {
     font-family: sourceSansPro;
     src: url(http://localhost:9000/fonts/SourceSansPro-Light.ttf)
@@ -19,3 +18,4 @@
     font-family: sourceSansProBold;
     src: url(http://localhost:9000/fonts/SourceSansPro-Bold.ttf)
 }
+*/
