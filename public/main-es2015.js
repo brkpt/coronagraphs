@@ -930,18 +930,31 @@ class StateTestingComponent {
     convertDate(oldDate) {
         return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
     }
+    getSma(data, currIndex, dayCount) {
+        if (currIndex <= dayCount) {
+            return data[currIndex].positive - data[currIndex - 1].positive;
+        }
+        else {
+            let sma = 0;
+            for (let index = currIndex - dayCount; index < currIndex; index++) {
+                sma = sma + (data[index].positive - data[index - 1].positive);
+            }
+            return sma / dayCount;
+        }
+    }
     getStateHistorical() {
         let state = 'UT';
         this.covidTrackingServices.getHistoricalByState(state).subscribe((data) => {
             const stateData = data.sort((a, b) => {
                 return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
             });
-            let rawData = [['Date', 'Positive']];
-            rawData.push([this.convertDate(stateData[0].date.toString()), stateData[0].positive]);
+            let rawData = [['Date', 'Positive', '3 Day SMA', '7 Day SMA']];
+            rawData.push([this.convertDate(stateData[0].date.toString()), stateData[0].positive, stateData[0].positive, stateData[0].positive]);
             for (let index = 1; index < stateData.length; index++) {
-                let testingDelta = stateData[index].totalTestResults - stateData[index - 1].totalTestResults;
                 let positiveDelta = stateData[index].positive - stateData[index - 1].positive;
-                rawData.push([this.convertDate(stateData[index].date.toString()), positiveDelta]);
+                let sma3 = this.getSma(stateData, index, 3);
+                let sma7 = this.getSma(stateData, index, 7);
+                rawData.push([this.convertDate(stateData[index].date.toString()), positiveDelta, sma3, sma7]);
             }
             let chartData = this.gLib.visualization.arrayToDataTable(rawData);
             let options = {
@@ -949,6 +962,19 @@ class StateTestingComponent {
                 width: 1100,
                 height: 700,
                 seriesType: 'bars',
+                series: {
+                    0: {
+                        color: 'blue'
+                    },
+                    1: {
+                        type: 'line',
+                        color: 'orange'
+                    },
+                    2: {
+                        type: 'line',
+                        color: 'red'
+                    }
+                }
             };
             let totalStateTesting = new this.gLib.visualization.ComboChart(document.getElementById('statetesting'));
             totalStateTesting.draw(chartData, options);

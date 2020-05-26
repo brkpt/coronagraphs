@@ -1577,6 +1577,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
         }
       }, {
+        key: "getSma",
+        value: function getSma(data, currIndex, dayCount) {
+          if (currIndex <= dayCount) {
+            return data[currIndex].positive - data[currIndex - 1].positive;
+          } else {
+            var sma = 0;
+
+            for (var index = currIndex - dayCount; index < currIndex; index++) {
+              sma = sma + (data[index].positive - data[index - 1].positive);
+            }
+
+            return sma / dayCount;
+          }
+        }
+      }, {
         key: "getStateHistorical",
         value: function getStateHistorical() {
           var _this9 = this;
@@ -1586,13 +1601,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             var stateData = data.sort(function (a, b) {
               return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
             });
-            var rawData = [['Date', 'Positive']];
-            rawData.push([_this9.convertDate(stateData[0].date.toString()), stateData[0].positive]);
+            var rawData = [['Date', 'Positive', '3 Day SMA', '7 Day SMA']];
+            rawData.push([_this9.convertDate(stateData[0].date.toString()), stateData[0].positive, stateData[0].positive, stateData[0].positive]);
 
             for (var index = 1; index < stateData.length; index++) {
-              var testingDelta = stateData[index].totalTestResults - stateData[index - 1].totalTestResults;
               var positiveDelta = stateData[index].positive - stateData[index - 1].positive;
-              rawData.push([_this9.convertDate(stateData[index].date.toString()), positiveDelta]);
+
+              var sma3 = _this9.getSma(stateData, index, 3);
+
+              var sma7 = _this9.getSma(stateData, index, 7);
+
+              rawData.push([_this9.convertDate(stateData[index].date.toString()), positiveDelta, sma3, sma7]);
             }
 
             var chartData = _this9.gLib.visualization.arrayToDataTable(rawData);
@@ -1601,7 +1620,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               title: 'Daily Positive Tests (' + state + ')',
               width: 1100,
               height: 700,
-              seriesType: 'bars'
+              seriesType: 'bars',
+              series: {
+                0: {
+                  color: 'blue'
+                },
+                1: {
+                  type: 'line',
+                  color: 'orange'
+                },
+                2: {
+                  type: 'line',
+                  color: 'red'
+                }
+              }
             };
             var totalStateTesting = new _this9.gLib.visualization.ComboChart(document.getElementById('statetesting'));
             totalStateTesting.draw(chartData, options);
