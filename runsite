@@ -1,3 +1,3 @@
 #!/bin/sh
-coronagraphs-1.0-SNAPSHOT/bin/coronagraphs -Dplay.http.secret.key=TheQuickBrownFox
+sudo coronagraphs-1.0-SNAPSHOT/bin/coronagraphs -Dplay.http.secret.key=TheQuickBrownFox -Dhttp.port=80 &
 
