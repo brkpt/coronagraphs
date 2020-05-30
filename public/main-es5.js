@@ -1,3 +1,17 @@
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -110,9 +124,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: AppComponent,
       selectors: [["app-root"]],
-      decls: 18,
+      decls: 20,
       vars: 0,
-      consts: [[1, "wrapper"], [1, "selectorContainer"], ["routerLink", "/countrydeath", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/countrydaily", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/countrytesting", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/statedeath", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/statetesting", "routerLinkActive", "active", 1, "tablink"], [1, "displayContainer"], [1, "headerContainer"], [1, "headerText"], [1, "graphContainer"]],
+      consts: [[1, "wrapper"], [1, "selectorContainer"], ["routerLink", "/countrydeath", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/countrydaily", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/countrytesting", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/statedeath", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/statepositives", "routerLinkActive", "active", 1, "tablink"], ["routerLink", "/statetesting", "routerLinkActive", "active", 1, "tablink"], [1, "displayContainer"], [1, "headerContainer"], [1, "headerText"], [1, "graphContainer"]],
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -145,27 +159,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "a", 6);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Utah Testing");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, "Utah Positives");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 7);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, "Utah Testing");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 7);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 8);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "div", 8);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "div", 9);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15, "CoronaGraphs");
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](15, "div", 9);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](16, "div", 10);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](17, "router-outlet");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](17, "CoronaGraphs");
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](18, "div", 11);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](19, "router-outlet");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -175,7 +195,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }
       },
       directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkActive"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"]],
-      styles: ["@font-face {\r\n    font-family: sourceSansPro;\r\n    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com/fonts/SourceSansPro-Light.ttf)\r\n}\r\n\r\n@font-face { \r\n    font-family: sourceSansProBold;\r\n    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com/fonts/SourceSansPro-Bold.ttf)\r\n}\r\n\r\n\r\n\r\n.wrapper[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 280px auto;\n}\r\n\r\n.selectorContainer[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-rows: repeat(6, 50px);\n  font-family: sourceSansPro;\n}\r\n\r\n.selectorContainer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  text-decoration: none;\n  color: #000000;\n}\r\n\r\n.selectorContainer[_ngcontent-%COMP%]   .active[_ngcontent-%COMP%] {\n  background-color: #0875d4;\n  color: #ffffff;\n}\r\n\r\n.tablink[_ngcontent-%COMP%] {\n  text-align: right;\n  font-size: 25px;\n  border-radius: 25px;\n  font-family: sourceSansPro;\n  padding-top: 7px;\n  padding-right: 12px;\n}\r\n\r\n.headerContainer[_ngcontent-%COMP%] {\n  color: #ffffff;\n  background-color: #0875d4;\n  font-size: 100px;\n  text-align: center;\n}\r\n\r\n.displayContainer[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-rows: 130 auto;\n  font-family: sourceSansPro;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY292aWQvY29tbW9uLmNzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSwwQkFBMEI7SUFDMUI7QUFDSjs7QUFFQTtJQUNJLDhCQUE4QjtJQUM5QjtBQUNKOztBQUVBOzs7Ozs7Ozs7O0NBVUM7O0FDbEJEO0VBQ0UsYUFBYTtFQUNiLGlDQUFpQztBQUNuQzs7QUFFQTtFQUNFLGFBQWE7RUFDYixtQ0FBbUM7RUFDbkMsMEJBQTBCO0FBQzVCOztBQUVBO0VBQ0UscUJBQXFCO0VBQ3JCLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsbUJBQW1CO0VBQ25CLDBCQUEwQjtFQUMxQixnQkFBZ0I7RUFDaEIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsY0FBYztFQUNkLHlCQUF5QjtFQUN6QixnQkFBZ0I7RUFDaEIsa0JBQWtCO0FBQ3BCOztBQUNBO0VBQ0UsYUFBYTtFQUNiLDRCQUE0QjtFQUM1QiwwQkFBMEI7QUFDNUIiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBmb250LWZhY2Uge1xyXG4gICAgZm9udC1mYW1pbHk6IHNvdXJjZVNhbnNQcm87XHJcbiAgICBzcmM6IHVybChodHRwOi8vZWMyLTMtOTUtMTAtMTI3LmNvbXB1dGUtMS5hbWF6b25hd3MuY29tL2ZvbnRzL1NvdXJjZVNhbnNQcm8tTGlnaHQudHRmKVxyXG59XHJcblxyXG5AZm9udC1mYWNlIHsgXHJcbiAgICBmb250LWZhbWlseTogc291cmNlU2Fuc1Byb0JvbGQ7XHJcbiAgICBzcmM6IHVybChodHRwOi8vZWMyLTMtOTUtMTAtMTI3LmNvbXB1dGUtMS5hbWF6b25hd3MuY29tL2ZvbnRzL1NvdXJjZVNhbnNQcm8tQm9sZC50dGYpXHJcbn1cclxuXHJcbi8qXHJcbkBmb250LWZhY2Uge1xyXG4gICAgZm9udC1mYW1pbHk6IHNvdXJjZVNhbnNQcm87XHJcbiAgICBzcmM6IHVybChodHRwOi8vbG9jYWxob3N0L2ZvbnRzL1NvdXJjZVNhbnNQcm8tTGlnaHQudHRmKVxyXG59XHJcblxyXG5AZm9udC1mYWNlIHsgXHJcbiAgICBmb250LWZhbWlseTogc291cmNlU2Fuc1Byb0JvbGQ7XHJcbiAgICBzcmM6IHVybChodHRwOi8vbG9jYWxob3N0L2ZvbnRzL1NvdXJjZVNhbnNQcm8tQm9sZC50dGYpXHJcbn1cclxuKi8iLCJAaW1wb3J0ICcuL2NvdmlkL2NvbW1vbi5jc3MnO1xuXG4ud3JhcHBlciB7XG4gIGRpc3BsYXk6IGdyaWQ7XG4gIGdyaWQtdGVtcGxhdGUtY29sdW1uczogMjgwcHggYXV0bztcbn1cblxuLnNlbGVjdG9yQ29udGFpbmVyIHtcbiAgZGlzcGxheTogZ3JpZDtcbiAgZ3JpZC10ZW1wbGF0ZS1yb3dzOiByZXBlYXQoNiwgNTBweCk7XG4gIGZvbnQtZmFtaWx5OiBzb3VyY2VTYW5zUHJvO1xufVxuXG4uc2VsZWN0b3JDb250YWluZXIgYSB7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbiAgY29sb3I6ICMwMDAwMDA7XG59XG5cbi5zZWxlY3RvckNvbnRhaW5lciAuYWN0aXZlIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzA4NzVkNDtcbiAgY29sb3I6ICNmZmZmZmY7XG59XG5cbi50YWJsaW5rIHtcbiAgdGV4dC1hbGlnbjogcmlnaHQ7XG4gIGZvbnQtc2l6ZTogMjVweDtcbiAgYm9yZGVyLXJhZGl1czogMjVweDtcbiAgZm9udC1mYW1pbHk6IHNvdXJjZVNhbnNQcm87XG4gIHBhZGRpbmctdG9wOiA3cHg7XG4gIHBhZGRpbmctcmlnaHQ6IDEycHg7XG59XG5cbi5oZWFkZXJDb250YWluZXIge1xuICBjb2xvcjogI2ZmZmZmZjtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzA4NzVkNDtcbiAgZm9udC1zaXplOiAxMDBweDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuLmRpc3BsYXlDb250YWluZXIge1xuICBkaXNwbGF5OiBncmlkO1xuICBncmlkLXRlbXBsYXRlLXJvd3M6IDEzMCBhdXRvO1xuICBmb250LWZhbWlseTogc291cmNlU2Fuc1Bybztcbn1cbiJdfQ== */"]
+      styles: ["@font-face {\r\n    font-family: sourceSansPro;\r\n    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com/fonts/SourceSansPro-Light.ttf)\r\n}\r\n\r\n@font-face { \r\n    font-family: sourceSansProBold;\r\n    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com/fonts/SourceSansPro-Bold.ttf)\r\n}\r\n\r\n\r\n\r\n.wrapper[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-columns: 280px auto;\n}\r\n\r\n.selectorContainer[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-rows: repeat(6, 50px);\n  font-family: sourceSansPro;\n}\r\n\r\n.selectorContainer[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  text-decoration: none;\n  color: #000000;\n}\r\n\r\n.selectorContainer[_ngcontent-%COMP%]   .active[_ngcontent-%COMP%] {\n  background-color: #0875d4;\n  color: #ffffff;\n}\r\n\r\n.tablink[_ngcontent-%COMP%] {\n  text-align: right;\n  font-size: 25px;\n  border-radius: 25px;\n  font-family: sourceSansPro;\n  padding-top: 7px;\n  padding-right: 12px;\n}\r\n\r\n.displayContainer[_ngcontent-%COMP%] {\n  display: grid;\n  grid-template-rows: 130 auto;\n  font-family: sourceSansPro;\n}\r\n\r\n.headerContainer[_ngcontent-%COMP%] {\n  color: #ffffff;\n  background-color: #0875d4;\n  font-size: 100px;\n  text-align: center;\n  border-top: solid;\n  border-right: solid;\n  border-left: solid;\n  border-color: lightgray;\n}\r\n\r\n.graphContainer[_ngcontent-%COMP%] {\n  border: solid;\n  border-color: lightgray;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY292aWQvY29tbW9uLmNzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSwwQkFBMEI7SUFDMUI7QUFDSjs7QUFFQTtJQUNJLDhCQUE4QjtJQUM5QjtBQUNKOztBQUVBOzs7Ozs7Ozs7O0NBVUM7O0FDbEJEO0VBQ0UsYUFBYTtFQUNiLGlDQUFpQztBQUNuQzs7QUFFQTtFQUNFLGFBQWE7RUFDYixtQ0FBbUM7RUFDbkMsMEJBQTBCO0FBQzVCOztBQUVBO0VBQ0UscUJBQXFCO0VBQ3JCLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSx5QkFBeUI7RUFDekIsY0FBYztBQUNoQjs7QUFFQTtFQUNFLGlCQUFpQjtFQUNqQixlQUFlO0VBQ2YsbUJBQW1CO0VBQ25CLDBCQUEwQjtFQUMxQixnQkFBZ0I7RUFDaEIsbUJBQW1CO0FBQ3JCOztBQUVBO0VBQ0UsYUFBYTtFQUNiLDRCQUE0QjtFQUM1QiwwQkFBMEI7QUFDNUI7O0FBRUE7RUFDRSxjQUFjO0VBQ2QseUJBQXlCO0VBQ3pCLGdCQUFnQjtFQUNoQixrQkFBa0I7RUFDbEIsaUJBQWlCO0VBQ2pCLG1CQUFtQjtFQUNuQixrQkFBa0I7RUFDbEIsdUJBQXVCO0FBQ3pCOztBQUVBO0VBQ0UsYUFBYTtFQUNiLHVCQUF1QjtBQUN6QiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGZvbnQtZmFjZSB7XHJcbiAgICBmb250LWZhbWlseTogc291cmNlU2Fuc1BybztcclxuICAgIHNyYzogdXJsKGh0dHA6Ly9lYzItMy05NS0xMC0xMjcuY29tcHV0ZS0xLmFtYXpvbmF3cy5jb20vZm9udHMvU291cmNlU2Fuc1Byby1MaWdodC50dGYpXHJcbn1cclxuXHJcbkBmb250LWZhY2UgeyBcclxuICAgIGZvbnQtZmFtaWx5OiBzb3VyY2VTYW5zUHJvQm9sZDtcclxuICAgIHNyYzogdXJsKGh0dHA6Ly9lYzItMy05NS0xMC0xMjcuY29tcHV0ZS0xLmFtYXpvbmF3cy5jb20vZm9udHMvU291cmNlU2Fuc1Byby1Cb2xkLnR0ZilcclxufVxyXG5cclxuLypcclxuQGZvbnQtZmFjZSB7XHJcbiAgICBmb250LWZhbWlseTogc291cmNlU2Fuc1BybztcclxuICAgIHNyYzogdXJsKGh0dHA6Ly9sb2NhbGhvc3QvZm9udHMvU291cmNlU2Fuc1Byby1MaWdodC50dGYpXHJcbn1cclxuXHJcbkBmb250LWZhY2UgeyBcclxuICAgIGZvbnQtZmFtaWx5OiBzb3VyY2VTYW5zUHJvQm9sZDtcclxuICAgIHNyYzogdXJsKGh0dHA6Ly9sb2NhbGhvc3QvZm9udHMvU291cmNlU2Fuc1Byby1Cb2xkLnR0ZilcclxufVxyXG4qLyIsIkBpbXBvcnQgJy4vY292aWQvY29tbW9uLmNzcyc7XG5cbi53cmFwcGVyIHtcbiAgZGlzcGxheTogZ3JpZDtcbiAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAyODBweCBhdXRvO1xufVxuXG4uc2VsZWN0b3JDb250YWluZXIge1xuICBkaXNwbGF5OiBncmlkO1xuICBncmlkLXRlbXBsYXRlLXJvd3M6IHJlcGVhdCg2LCA1MHB4KTtcbiAgZm9udC1mYW1pbHk6IHNvdXJjZVNhbnNQcm87XG59XG5cbi5zZWxlY3RvckNvbnRhaW5lciBhIHtcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICBjb2xvcjogIzAwMDAwMDtcbn1cblxuLnNlbGVjdG9yQ29udGFpbmVyIC5hY3RpdmUge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDg3NWQ0O1xuICBjb2xvcjogI2ZmZmZmZjtcbn1cblxuLnRhYmxpbmsge1xuICB0ZXh0LWFsaWduOiByaWdodDtcbiAgZm9udC1zaXplOiAyNXB4O1xuICBib3JkZXItcmFkaXVzOiAyNXB4O1xuICBmb250LWZhbWlseTogc291cmNlU2Fuc1BybztcbiAgcGFkZGluZy10b3A6IDdweDtcbiAgcGFkZGluZy1yaWdodDogMTJweDtcbn1cblxuLmRpc3BsYXlDb250YWluZXIge1xuICBkaXNwbGF5OiBncmlkO1xuICBncmlkLXRlbXBsYXRlLXJvd3M6IDEzMCBhdXRvO1xuICBmb250LWZhbWlseTogc291cmNlU2Fuc1Bybztcbn1cblxuLmhlYWRlckNvbnRhaW5lciB7XG4gIGNvbG9yOiAjZmZmZmZmO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMDg3NWQ0O1xuICBmb250LXNpemU6IDEwMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGJvcmRlci10b3A6IHNvbGlkO1xuICBib3JkZXItcmlnaHQ6IHNvbGlkO1xuICBib3JkZXItbGVmdDogc29saWQ7XG4gIGJvcmRlci1jb2xvcjogbGlnaHRncmF5O1xufVxuXG4uZ3JhcGhDb250YWluZXIge1xuICBib3JkZXI6IHNvbGlkO1xuICBib3JkZXItY29sb3I6IGxpZ2h0Z3JheTtcbn0iXX0= */"]
     });
     /*@__PURE__*/
 
@@ -303,7 +323,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _covid_state_statetesting_statetesting_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    var _covid_state_statepositives_statepositives_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
+    /*! ./covid/state/statepositives/statepositives.component */
+    "./src/app/covid/state/statepositives/statepositives.component.ts");
+    /* harmony import */
+
+
+    var _covid_state_statetesting_statetesting_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
     /*! ./covid/state/statetesting/statetesting.component */
     "./src/app/covid/state/statetesting/statetesting.component.ts");
 
@@ -320,11 +346,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       path: 'statedeath',
       component: _covid_state_statedeaths_statetotaldeaths_component__WEBPACK_IMPORTED_MODULE_10__["StateTotalDeathsComponent"]
     }, {
-      path: 'statetesting',
-      component: _covid_state_statetesting_statetesting_component__WEBPACK_IMPORTED_MODULE_14__["StateTestingComponent"]
+      path: 'statepositives',
+      component: _covid_state_statepositives_statepositives_component__WEBPACK_IMPORTED_MODULE_14__["StatePositivesComponent"]
     }, {
-      path: 'statehospitalized',
-      component: _covid_state_statehospitalized_statehospitalized_component__WEBPACK_IMPORTED_MODULE_11__["StateHospitalizedComponent"]
+      path: 'statetesting',
+      component: _covid_state_statetesting_statetesting_component__WEBPACK_IMPORTED_MODULE_15__["StateTestingComponent"]
     }, {
       path: '',
       redirectTo: '/countrydeath',
@@ -358,7 +384,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _covid_country_countrydailydeaths_countrydailydeaths_component__WEBPACK_IMPORTED_MODULE_7__["CountryDailyDeathsComponent"], _covid_country_countrytotaldeaths_countrytotaldeaths_component__WEBPACK_IMPORTED_MODULE_8__["CountryTotalDeathsComponent"], _covid_country_countrytesting_countrytesting_component__WEBPACK_IMPORTED_MODULE_9__["CountryTestingComponent"], _covid_state_statedeaths_statetotaldeaths_component__WEBPACK_IMPORTED_MODULE_10__["StateTotalDeathsComponent"], _covid_state_statetesting_statetesting_component__WEBPACK_IMPORTED_MODULE_14__["StateTestingComponent"], _covid_state_statehospitalized_statehospitalized_component__WEBPACK_IMPORTED_MODULE_11__["StateHospitalizedComponent"], _covid_state_stateicu_stateicu_component__WEBPACK_IMPORTED_MODULE_12__["StateIcuComponent"], _covid_state_stateventilator_stateventilator_component__WEBPACK_IMPORTED_MODULE_13__["StateVentilatorComponent"]],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _covid_country_countrydailydeaths_countrydailydeaths_component__WEBPACK_IMPORTED_MODULE_7__["CountryDailyDeathsComponent"], _covid_country_countrytotaldeaths_countrytotaldeaths_component__WEBPACK_IMPORTED_MODULE_8__["CountryTotalDeathsComponent"], _covid_country_countrytesting_countrytesting_component__WEBPACK_IMPORTED_MODULE_9__["CountryTestingComponent"], _covid_state_statedeaths_statetotaldeaths_component__WEBPACK_IMPORTED_MODULE_10__["StateTotalDeathsComponent"], _covid_state_statepositives_statepositives_component__WEBPACK_IMPORTED_MODULE_14__["StatePositivesComponent"], _covid_state_statehospitalized_statehospitalized_component__WEBPACK_IMPORTED_MODULE_11__["StateHospitalizedComponent"], _covid_state_stateicu_stateicu_component__WEBPACK_IMPORTED_MODULE_12__["StateIcuComponent"], _covid_state_stateventilator_stateventilator_component__WEBPACK_IMPORTED_MODULE_13__["StateVentilatorComponent"]],
         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
       });
     })();
@@ -369,7 +395,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
-          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _covid_country_countrydailydeaths_countrydailydeaths_component__WEBPACK_IMPORTED_MODULE_7__["CountryDailyDeathsComponent"], _covid_country_countrytotaldeaths_countrytotaldeaths_component__WEBPACK_IMPORTED_MODULE_8__["CountryTotalDeathsComponent"], _covid_country_countrytesting_countrytesting_component__WEBPACK_IMPORTED_MODULE_9__["CountryTestingComponent"], _covid_state_statedeaths_statetotaldeaths_component__WEBPACK_IMPORTED_MODULE_10__["StateTotalDeathsComponent"], _covid_state_statetesting_statetesting_component__WEBPACK_IMPORTED_MODULE_14__["StateTestingComponent"], _covid_state_statehospitalized_statehospitalized_component__WEBPACK_IMPORTED_MODULE_11__["StateHospitalizedComponent"], _covid_state_stateicu_stateicu_component__WEBPACK_IMPORTED_MODULE_12__["StateIcuComponent"], _covid_state_stateventilator_stateventilator_component__WEBPACK_IMPORTED_MODULE_13__["StateVentilatorComponent"]],
+          declarations: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"], _covid_country_countrydailydeaths_countrydailydeaths_component__WEBPACK_IMPORTED_MODULE_7__["CountryDailyDeathsComponent"], _covid_country_countrytotaldeaths_countrytotaldeaths_component__WEBPACK_IMPORTED_MODULE_8__["CountryTotalDeathsComponent"], _covid_country_countrytesting_countrytesting_component__WEBPACK_IMPORTED_MODULE_9__["CountryTestingComponent"], _covid_state_statedeaths_statetotaldeaths_component__WEBPACK_IMPORTED_MODULE_10__["StateTotalDeathsComponent"], _covid_state_statepositives_statepositives_component__WEBPACK_IMPORTED_MODULE_14__["StatePositivesComponent"], _covid_state_statehospitalized_statehospitalized_component__WEBPACK_IMPORTED_MODULE_11__["StateHospitalizedComponent"], _covid_state_stateicu_stateicu_component__WEBPACK_IMPORTED_MODULE_12__["StateIcuComponent"], _covid_state_stateventilator_stateventilator_component__WEBPACK_IMPORTED_MODULE_13__["StateVentilatorComponent"]],
           imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientXsrfModule"].withOptions({
             cookieName: 'Csrf-Token',
             headerName: 'Csrf-Token'
@@ -518,19 +544,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var _covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../../../covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
@@ -549,39 +581,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     ;
 
-    var CountryDailyDeathsComponent = /*#__PURE__*/function () {
+    var CountryDailyDeathsComponent = /*#__PURE__*/function (_covidcomponent__WEBP) {
+      _inherits(CountryDailyDeathsComponent, _covidcomponent__WEBP);
+
+      var _super = _createSuper(CountryDailyDeathsComponent);
+
       function CountryDailyDeathsComponent(route, chartServices, covidTrackingServices) {
+        var _this3;
+
         _classCallCheck(this, CountryDailyDeathsComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
+        _this3 = _super.call(this, chartServices, covidTrackingServices);
+        _this3.chartServices = chartServices;
+        _this3.covidTrackingServices = covidTrackingServices;
+        return _this3;
       }
 
       _createClass(CountryDailyDeathsComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getCountryDaily();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getCountryDaily",
-        value: function getCountryDaily() {
-          var _this3 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this4 = this;
 
           this.covidTrackingServices.getCountryDaily().subscribe(function (data) {
             var sorted = data.sort(function (a, b) {
@@ -590,12 +609,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             var dailyDeaths = [];
 
-            var startDate = _this3.convertDate(sorted[0].date.toString());
+            var startDate = _this4.convertDate(sorted[0].date.toString());
 
             dailyDeaths.push(new DailyDeaths(startDate, sorted[0].death, sorted[0].death, sorted[0].death));
 
             for (var i = 1; i < sorted.length; i++) {
-              var dateStr = _this3.convertDate(sorted[i].date.toString());
+              var dateStr = _this4.convertDate(sorted[i].date.toString());
 
               if (i > 2) {
                 var death3sma = (sorted[i - 3].deathIncrease + sorted[i - 2].deathIncrease + sorted[i - 1].deathIncrease) / 3;
@@ -633,9 +652,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               }
             };
 
-            var newData = _this3.gLib.visualization.arrayToDataTable(rawData);
+            var newData = _this4.gLib.visualization.arrayToDataTable(rawData);
 
-            var dailyDeathChart = new _this3.gLib.visualization.ComboChart(document.getElementById('dailyDeaths'));
+            var dailyDeathChart = new _this4.gLib.visualization.ComboChart(document.getElementById('dailyDeaths'));
             dailyDeathChart.draw(newData, options);
           });
         }
@@ -645,15 +664,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }]);
 
       return CountryDailyDeathsComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     CountryDailyDeathsComponent.ɵfac = function CountryDailyDeathsComponent_Factory(t) {
-      return new (t || CountryDailyDeathsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || CountryDailyDeathsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     CountryDailyDeathsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: CountryDailyDeathsComponent,
       selectors: [["app-countrydailydeaths"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "dailyDeaths"]],
@@ -676,11 +696,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: _covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: _covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
@@ -716,19 +736,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
@@ -760,40 +786,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     ;
 
-    var CountryTestingComponent = /*#__PURE__*/function () {
+    var CountryTestingComponent = /*#__PURE__*/function (_covidcomponent__WEBP2) {
+      _inherits(CountryTestingComponent, _covidcomponent__WEBP2);
+
+      var _super2 = _createSuper(CountryTestingComponent);
+
       function CountryTestingComponent(route, chartServices, covidTrackingServices) {
+        var _this5;
+
         _classCallCheck(this, CountryTestingComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
-        this.gLib = null;
+        _this5 = _super2.call(this, chartServices, covidTrackingServices);
+        _this5.chartServices = chartServices;
+        _this5.covidTrackingServices = covidTrackingServices;
+        return _this5;
       }
 
       _createClass(CountryTestingComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getCountryDaily();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getCountryDaily",
-        value: function getCountryDaily() {
-          var _this4 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this6 = this;
 
           this.covidTrackingServices.getCountryDaily().subscribe(function (data) {
             // Collect the data
@@ -804,14 +816,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             var dailyTesting = [];
             var dailyPositive = [];
 
-            var startDate = _this4.convertDate(sorted[0].date.toString());
+            var startDate = _this6.convertDate(sorted[0].date.toString());
 
             dailyTesting.push(new DailyTesting(startDate, sorted[0].totalTestResults, sorted[0].positive, sorted[0].negative));
             var basePositiveRate = sorted[0].positiveIncrease / sorted[0].totalTestResultsIncrease;
             dailyPositive.push(new DailyPositives(startDate, basePositiveRate, basePositiveRate));
 
             for (var i = 1; i < sorted.length; i++) {
-              var dateStr = _this4.convertDate(sorted[i].date.toString());
+              var dateStr = _this6.convertDate(sorted[i].date.toString());
 
               var positiveRate = sorted[i].positiveIncrease / sorted[i].totalTestResultsIncrease;
 
@@ -851,24 +863,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               }
             };
 
-            var newData = _this4.gLib.visualization.arrayToDataTable(rawData);
+            var newData = _this6.gLib.visualization.arrayToDataTable(rawData);
 
-            var dailyPositiveChart = new _this4.gLib.visualization.ComboChart(document.getElementById('dailyTesting'));
+            var dailyPositiveChart = new _this6.gLib.visualization.ComboChart(document.getElementById('dailyTesting'));
             dailyPositiveChart.draw(newData, options);
           });
         }
       }]);
 
       return CountryTestingComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     CountryTestingComponent.ɵfac = function CountryTestingComponent_Factory(t) {
-      return new (t || CountryTestingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || CountryTestingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     CountryTestingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: CountryTestingComponent,
       selectors: [["app-countrytesting"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "dailyTesting"]],
@@ -891,11 +904,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
@@ -931,19 +944,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
@@ -958,40 +977,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     ;
 
-    var CountryTotalDeathsComponent = /*#__PURE__*/function () {
+    var CountryTotalDeathsComponent = /*#__PURE__*/function (_covidcomponent__WEBP3) {
+      _inherits(CountryTotalDeathsComponent, _covidcomponent__WEBP3);
+
+      var _super3 = _createSuper(CountryTotalDeathsComponent);
+
       function CountryTotalDeathsComponent(route, chartServices, covidTrackingServices) {
+        var _this7;
+
         _classCallCheck(this, CountryTotalDeathsComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
-        this.gLib = null;
+        _this7 = _super3.call(this, chartServices, covidTrackingServices);
+        _this7.chartServices = chartServices;
+        _this7.covidTrackingServices = covidTrackingServices;
+        return _this7;
       }
 
       _createClass(CountryTotalDeathsComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getCountryDaily();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getCountryDaily",
-        value: function getCountryDaily() {
-          var _this5 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this8 = this;
 
           this.covidTrackingServices.getCountryDaily().subscribe(function (data) {
             // Collect the data
@@ -1001,7 +1006,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             var rawData = [['Date', 'Deaths']];
             sorted.forEach(function (d) {
-              rawData.push([_this5.convertDate(d.date.toString()), d.death]);
+              rawData.push([_this8.convertDate(d.date.toString()), d.death]);
             }); // Collect daily testing
 
             var options = {
@@ -1011,24 +1016,25 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               seriesType: 'bars'
             };
 
-            var newData = _this5.gLib.visualization.arrayToDataTable(rawData);
+            var newData = _this8.gLib.visualization.arrayToDataTable(rawData);
 
-            var totalDeathChart = new _this5.gLib.visualization.ComboChart(document.getElementById('totalDeaths'));
+            var totalDeathChart = new _this8.gLib.visualization.ComboChart(document.getElementById('totalDeaths'));
             totalDeathChart.draw(newData, options);
           });
         }
       }]);
 
       return CountryTotalDeathsComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     CountryTotalDeathsComponent.ɵfac = function CountryTotalDeathsComponent_Factory(t) {
-      return new (t || CountryTotalDeathsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || CountryTotalDeathsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     CountryTotalDeathsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: CountryTotalDeathsComponent,
       selectors: [["app-countrytotaldeaths"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "totalDeaths"]],
@@ -1051,16 +1057,113 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
     /***/
 
+  },
+
+  /***/
+  "./src/app/covid/covidcomponent.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/covid/covidcomponent.ts ***!
+    \*****************************************/
+
+  /*! exports provided: CovidComponent */
+
+  /***/
+  function srcAppCovidCovidcomponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CovidComponent", function () {
+      return CovidComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../google-chart/google-chart.service */
+    "./src/app/google-chart/google-chart.service.ts");
+    /* harmony import */
+
+
+    var _covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../covidtracking/covidtracking.service */
+    "./src/app/covidtracking/covidtracking.service.ts");
+
+    var CovidComponent = /*#__PURE__*/function () {
+      function CovidComponent(chartServices, covidTrackingServices) {
+        _classCallCheck(this, CovidComponent);
+
+        this.chartServices = chartServices;
+        this.covidTrackingServices = covidTrackingServices;
+      }
+
+      _createClass(CovidComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.checkLoading();
+        }
+      }, {
+        key: "checkLoading",
+        value: function checkLoading() {
+          if (this.chartServices.getLoaded()) {
+            this.gLib = this.chartServices.getGoogle();
+            this.loadData();
+          } else {
+            // Check again in 3 seconds
+            setTimeout(this.checkLoading, 1000);
+          }
+        }
+      }, {
+        key: "convertDate",
+        value: function convertDate(oldDate) {
+          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
+        }
+      }, {
+        key: "getSma",
+        value: function getSma(data, currIndex, dayCount) {
+          if (currIndex <= dayCount) {
+            return data[currIndex];
+          } else {
+            var sma = 0;
+
+            for (var index = currIndex - dayCount + 1; index < currIndex + 1; index++) {
+              sma = sma + data[index];
+            }
+
+            return sma / dayCount;
+          }
+        }
+      }]);
+
+      return CovidComponent;
+    }();
+
+    CovidComponent.ɵfac = function CovidComponent_Factory(t) {
+      return new (t || CovidComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_1__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_2__["CovidTrackingService"]));
+    };
+
+    CovidComponent.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineDirective"]({
+      type: CovidComponent
+    });
+    /***/
   },
 
   /***/
@@ -1091,56 +1194,48 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
-    var StateTotalDeathsComponent = /*#__PURE__*/function () {
+    var StateTotalDeathsComponent = /*#__PURE__*/function (_covidcomponent__WEBP4) {
+      _inherits(StateTotalDeathsComponent, _covidcomponent__WEBP4);
+
+      var _super4 = _createSuper(StateTotalDeathsComponent);
+
       function StateTotalDeathsComponent(route, chartServices, covidTrackingServices) {
+        var _this9;
+
         _classCallCheck(this, StateTotalDeathsComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
-        this.gLib = null;
+        _this9 = _super4.call(this, chartServices, covidTrackingServices);
+        _this9.chartServices = chartServices;
+        _this9.covidTrackingServices = covidTrackingServices;
+        return _this9;
       }
 
       _createClass(StateTotalDeathsComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getStateHistorical();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getStateHistorical",
-        value: function getStateHistorical() {
-          var _this6 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this10 = this;
 
           var state = 'UT';
           this.covidTrackingServices.getHistoricalByState(state).subscribe(function (data) {
@@ -1149,10 +1244,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
             var rawData = [['Date', 'Deaths']];
             stateData.forEach(function (d) {
-              rawData.push([_this6.convertDate(d.date.toString()), d.deathIncrease]);
+              rawData.push([_this10.convertDate(d.date.toString()), d.deathIncrease]);
             });
 
-            var chartData = _this6.gLib.visualization.arrayToDataTable(rawData);
+            var chartData = _this10.gLib.visualization.arrayToDataTable(rawData);
 
             var options = {
               title: 'Daily Deaths (' + state + ')',
@@ -1160,22 +1255,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               height: 700,
               seriesType: 'bars'
             };
-            var totalDeathChart = new _this6.gLib.visualization.ComboChart(document.getElementById('stateDeaths'));
+            var totalDeathChart = new _this10.gLib.visualization.ComboChart(document.getElementById('stateDeaths'));
             totalDeathChart.draw(chartData, options);
           });
         }
       }]);
 
       return StateTotalDeathsComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     StateTotalDeathsComponent.ɵfac = function StateTotalDeathsComponent_Factory(t) {
-      return new (t || StateTotalDeathsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || StateTotalDeathsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     StateTotalDeathsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: StateTotalDeathsComponent,
       selectors: [["app-statedeaths"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "stateDeaths"]],
@@ -1198,11 +1294,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
@@ -1238,56 +1334,48 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
-    var StateHospitalizedComponent = /*#__PURE__*/function () {
+    var StateHospitalizedComponent = /*#__PURE__*/function (_covidcomponent__WEBP5) {
+      _inherits(StateHospitalizedComponent, _covidcomponent__WEBP5);
+
+      var _super5 = _createSuper(StateHospitalizedComponent);
+
       function StateHospitalizedComponent(route, chartServices, covidTrackingServices) {
+        var _this11;
+
         _classCallCheck(this, StateHospitalizedComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
-        this.gLib = null;
+        _this11 = _super5.call(this, chartServices, covidTrackingServices);
+        _this11.chartServices = chartServices;
+        _this11.covidTrackingServices = covidTrackingServices;
+        return _this11;
       }
 
       _createClass(StateHospitalizedComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getStateHistorical();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getStateHistorical",
-        value: function getStateHistorical() {
-          var _this7 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this12 = this;
 
           this.covidTrackingServices.getHistoricalByState('ut').subscribe(function (data) {
             var stateData = data.sort(function (a, b) {
@@ -1295,10 +1383,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
             var rawData = [['Date', 'Hospitalizations']];
             stateData.forEach(function (d) {
-              rawData.push([_this7.convertDate(d.date.toString()), d.hospitalizedIncrease]);
+              rawData.push([_this12.convertDate(d.date.toString()), d.hospitalizedIncrease]);
             });
 
-            var chartData = _this7.gLib.visualization.arrayToDataTable(rawData);
+            var chartData = _this12.gLib.visualization.arrayToDataTable(rawData);
 
             var options = {
               title: 'Currently In Hospital (UT)',
@@ -1306,22 +1394,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               height: 700,
               seriesType: 'bars'
             };
-            var totalDeathChart = new _this7.gLib.visualization.ComboChart(document.getElementById('hospitalizations'));
+            var totalDeathChart = new _this12.gLib.visualization.ComboChart(document.getElementById('hospitalizations'));
             totalDeathChart.draw(chartData, options);
           });
         }
       }]);
 
       return StateHospitalizedComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     StateHospitalizedComponent.ɵfac = function StateHospitalizedComponent_Factory(t) {
-      return new (t || StateHospitalizedComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || StateHospitalizedComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     StateHospitalizedComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: StateHospitalizedComponent,
       selectors: [["app-statehospitalized"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "hospitalizations"]],
@@ -1344,11 +1433,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
@@ -1384,56 +1473,48 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
-    var StateIcuComponent = /*#__PURE__*/function () {
+    var StateIcuComponent = /*#__PURE__*/function (_covidcomponent__WEBP6) {
+      _inherits(StateIcuComponent, _covidcomponent__WEBP6);
+
+      var _super6 = _createSuper(StateIcuComponent);
+
       function StateIcuComponent(route, chartServices, covidTrackingServices) {
+        var _this13;
+
         _classCallCheck(this, StateIcuComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
-        this.gLib = null;
+        _this13 = _super6.call(this, chartServices, covidTrackingServices);
+        _this13.chartServices = chartServices;
+        _this13.covidTrackingServices = covidTrackingServices;
+        return _this13;
       }
 
       _createClass(StateIcuComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getStateHistorical();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getStateHistorical",
-        value: function getStateHistorical() {
-          var _this8 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this14 = this;
 
           this.covidTrackingServices.getHistoricalByState('ut').subscribe(function (data) {
             var stateData = data.sort(function (a, b) {
@@ -1441,10 +1522,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
             var rawData = [['Date', 'ICU']];
             stateData.forEach(function (d) {
-              rawData.push([_this8.convertDate(d.date.toString()), d.hospitalizedIncrease]);
+              rawData.push([_this14.convertDate(d.date.toString()), d.hospitalizedIncrease]);
             });
 
-            var chartData = _this8.gLib.visualization.arrayToDataTable(rawData);
+            var chartData = _this14.gLib.visualization.arrayToDataTable(rawData);
 
             var options = {
               title: 'Currently in ICU (UT)',
@@ -1452,22 +1533,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               height: 700,
               seriesType: 'bars'
             };
-            var icuChart = new _this8.gLib.visualization.ComboChart(document.getElementById('icu'));
+            var icuChart = new _this14.gLib.visualization.ComboChart(document.getElementById('icu'));
             icuChart.draw(chartData, options);
           });
         }
       }]);
 
       return StateIcuComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     StateIcuComponent.ɵfac = function StateIcuComponent_Factory(t) {
-      return new (t || StateIcuComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || StateIcuComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     StateIcuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: StateIcuComponent,
       selectors: [["app-stateicu"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "icu"]],
@@ -1490,11 +1572,173 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
+        }];
+      }, null);
+    })();
+    /***/
+
+  },
+
+  /***/
+  "./src/app/covid/state/statepositives/statepositives.component.ts":
+  /*!************************************************************************!*\
+    !*** ./src/app/covid/state/statepositives/statepositives.component.ts ***!
+    \************************************************************************/
+
+  /*! exports provided: StatePositivesComponent */
+
+  /***/
+  function srcAppCovidStateStatepositivesStatepositivesComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "StatePositivesComponent", function () {
+      return StatePositivesComponent;
+    });
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../google-chart/google-chart.service */
+    "./src/app/google-chart/google-chart.service.ts");
+    /* harmony import */
+
+
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! src/app/covidtracking/covidtracking.service */
+    "./src/app/covidtracking/covidtracking.service.ts");
+
+    var StatePositivesComponent = /*#__PURE__*/function (_covidcomponent__WEBP7) {
+      _inherits(StatePositivesComponent, _covidcomponent__WEBP7);
+
+      var _super7 = _createSuper(StatePositivesComponent);
+
+      function StatePositivesComponent(route, chartServices, covidTrackingServices) {
+        var _this15;
+
+        _classCallCheck(this, StatePositivesComponent);
+
+        _this15 = _super7.call(this, chartServices, covidTrackingServices);
+        _this15.chartServices = chartServices;
+        _this15.covidTrackingServices = covidTrackingServices;
+        return _this15;
+      }
+
+      _createClass(StatePositivesComponent, [{
+        key: "loadData",
+        value: function loadData() {
+          var _this16 = this;
+
+          var state = 'UT';
+          this.covidTrackingServices.getHistoricalByState(state).subscribe(function (data) {
+            var stateData = data.sort(function (a, b) {
+              return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+            });
+            var rawData = [['Date', 'Positive', '3 Day SMA', '7 Day SMA']];
+            var positives = stateData.map(function (d) {
+              return d.positiveIncrease;
+            });
+            rawData.push([_this16.convertDate(stateData[0].date.toString()), stateData[0].positive, stateData[0].positive, stateData[0].positive]);
+
+            for (var index = 1; index < stateData.length; index++) {
+              var sma3 = _this16.getSma(positives, index, 3);
+
+              var sma7 = _this16.getSma(positives, index, 7);
+
+              rawData.push([_this16.convertDate(stateData[index].date.toString()), positives[index], sma3, sma7]);
+            }
+
+            var chartData = _this16.gLib.visualization.arrayToDataTable(rawData);
+
+            var options = {
+              title: 'Daily Positive Tests (' + state + ')',
+              width: 1100,
+              height: 700,
+              seriesType: 'bars',
+              series: {
+                0: {
+                  color: 'blue'
+                },
+                1: {
+                  type: 'line',
+                  color: 'orange'
+                },
+                2: {
+                  type: 'line',
+                  color: 'red'
+                }
+              }
+            };
+            var totalStateTesting = new _this16.gLib.visualization.ComboChart(document.getElementById('statepositives'));
+            totalStateTesting.draw(chartData, options);
+          });
+        }
+      }]);
+
+      return StatePositivesComponent;
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
+
+    StatePositivesComponent.ɵfac = function StatePositivesComponent_Factory(t) {
+      return new (t || StatePositivesComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
+    };
+
+    StatePositivesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
+      type: StatePositivesComponent,
+      selectors: [["app-statetesting"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
+      decls: 1,
+      vars: 0,
+      consts: [["id", "statepositives"]],
+      template: function StatePositivesComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "div", 0);
+        }
+      },
+      styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvdmlkL3N0YXRlL3N0YXRlcG9zaXRpdmVzL3N0YXRlcG9zaXRpdmVzLmNvbXBvbmVudC5jc3MifQ== */"]
+    });
+    /*@__PURE__*/
+
+    (function () {
+      _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](StatePositivesComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+          selector: 'app-statetesting',
+          templateUrl: './statepositives.component.html',
+          styleUrls: ['./statepositives.component.css']
+        }]
+      }], function () {
+        return [{
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
+        }, {
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
+        }, {
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
@@ -1530,94 +1774,75 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
-    var StateTestingComponent = /*#__PURE__*/function () {
+    var StateTestingComponent = /*#__PURE__*/function (_covidcomponent__WEBP8) {
+      _inherits(StateTestingComponent, _covidcomponent__WEBP8);
+
+      var _super8 = _createSuper(StateTestingComponent);
+
       function StateTestingComponent(route, chartServices, covidTrackingServices) {
+        var _this17;
+
         _classCallCheck(this, StateTestingComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
-        this.gLib = null;
+        _this17 = _super8.call(this, chartServices, covidTrackingServices);
+        _this17.chartServices = chartServices;
+        _this17.covidTrackingServices = covidTrackingServices;
+        return _this17;
       }
 
       _createClass(StateTestingComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getStateHistorical();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getSma",
-        value: function getSma(data, currIndex, dayCount) {
-          if (currIndex <= dayCount) {
-            return data[currIndex].positive - data[currIndex - 1].positive;
-          } else {
-            var sma = 0;
-
-            for (var index = currIndex - dayCount; index < currIndex; index++) {
-              sma = sma + (data[index].positive - data[index - 1].positive);
-            }
-
-            return sma / dayCount;
-          }
-        }
-      }, {
-        key: "getStateHistorical",
-        value: function getStateHistorical() {
-          var _this9 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this18 = this;
 
           var state = 'UT';
           this.covidTrackingServices.getHistoricalByState(state).subscribe(function (data) {
             var stateData = data.sort(function (a, b) {
               return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
             });
-            var rawData = [['Date', 'Positive', '3 Day SMA', '7 Day SMA']];
-            rawData.push([_this9.convertDate(stateData[0].date.toString()), stateData[0].positive, stateData[0].positive, stateData[0].positive]);
+            var testingDeltas = [];
 
-            for (var index = 1; index < stateData.length; index++) {
-              var positiveDelta = stateData[index].positive - stateData[index - 1].positive;
-
-              var sma3 = _this9.getSma(stateData, index, 3);
-
-              var sma7 = _this9.getSma(stateData, index, 7);
-
-              rawData.push([_this9.convertDate(stateData[index].date.toString()), positiveDelta, sma3, sma7]);
+            for (var index = 0; index < stateData.length; index++) {
+              testingDeltas.push(stateData[index].totalTestResultsIncrease);
             }
 
-            var chartData = _this9.gLib.visualization.arrayToDataTable(rawData);
+            var rawData = [['Date', 'Positive', '3 Day SMA', '7 Day SMA']];
+            rawData.push([_this18.convertDate(stateData[0].date.toString()), stateData[0].totalTestResultsIncrease, stateData[0].totalTestResultsIncrease, stateData[0].totalTestResultsIncrease]);
+
+            for (var _index = 1; _index < stateData.length; _index++) {
+              var sma3 = _this18.getSma(testingDeltas, _index, 3);
+
+              var sma7 = _this18.getSma(testingDeltas, _index, 7);
+
+              rawData.push([_this18.convertDate(stateData[_index].date.toString()), stateData[_index].totalTestResultsIncrease, sma3, sma7]);
+            }
+
+            var chartData = _this18.gLib.visualization.arrayToDataTable(rawData);
 
             var options = {
-              title: 'Daily Positive Tests (' + state + ')',
+              title: 'Daily Total Tests (' + state + ')',
               width: 1100,
               height: 700,
               seriesType: 'bars',
@@ -1635,22 +1860,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 }
               }
             };
-            var totalStateTesting = new _this9.gLib.visualization.ComboChart(document.getElementById('statetesting'));
+            var totalStateTesting = new _this18.gLib.visualization.ComboChart(document.getElementById('statetesting'));
             totalStateTesting.draw(chartData, options);
           });
         }
       }]);
 
       return StateTestingComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     StateTestingComponent.ɵfac = function StateTestingComponent_Factory(t) {
-      return new (t || StateTestingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || StateTestingComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     StateTestingComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: StateTestingComponent,
       selectors: [["app-statetesting"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "statetesting"]],
@@ -1673,11 +1899,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
@@ -1713,56 +1939,48 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _covidcomponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../covidcomponent */
+    "./src/app/covid/covidcomponent.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ../../../google-chart/google-chart.service */
     "./src/app/google-chart/google-chart.service.ts");
     /* harmony import */
 
 
-    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! src/app/covidtracking/covidtracking.service */
     "./src/app/covidtracking/covidtracking.service.ts");
 
-    var StateVentilatorComponent = /*#__PURE__*/function () {
+    var StateVentilatorComponent = /*#__PURE__*/function (_covidcomponent__WEBP9) {
+      _inherits(StateVentilatorComponent, _covidcomponent__WEBP9);
+
+      var _super9 = _createSuper(StateVentilatorComponent);
+
       function StateVentilatorComponent(route, chartServices, covidTrackingServices) {
+        var _this19;
+
         _classCallCheck(this, StateVentilatorComponent);
 
-        this.chartServices = chartServices;
-        this.covidTrackingServices = covidTrackingServices;
-        this.gLib = null;
+        _this19 = _super9.call(this, chartServices, covidTrackingServices);
+        _this19.chartServices = chartServices;
+        _this19.covidTrackingServices = covidTrackingServices;
+        return _this19;
       }
 
       _createClass(StateVentilatorComponent, [{
-        key: "ngOnInit",
-        value: function ngOnInit() {
-          this.checkLoading();
-        }
-      }, {
-        key: "checkLoading",
-        value: function checkLoading() {
-          if (this.chartServices.getLoaded()) {
-            this.gLib = this.chartServices.getGoogle();
-            this.getStateHistorical();
-          } else {
-            // Check again in 3 seconds
-            setTimeout(this.checkLoading, 1000);
-          }
-        }
-      }, {
-        key: "convertDate",
-        value: function convertDate(oldDate) {
-          return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-        }
-      }, {
-        key: "getStateHistorical",
-        value: function getStateHistorical() {
-          var _this10 = this;
+        key: "loadData",
+        value: function loadData() {
+          var _this20 = this;
 
           this.covidTrackingServices.getHistoricalByState('ut').subscribe(function (data) {
             var stateData = data.sort(function (a, b) {
@@ -1770,10 +1988,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             });
             var rawData = [['Date', 'Ventilator']];
             stateData.forEach(function (d) {
-              rawData.push([_this10.convertDate(d.date.toString()), d.onVentilatorCurrently]);
+              rawData.push([_this20.convertDate(d.date.toString()), d.onVentilatorCurrently]);
             });
 
-            var chartData = _this10.gLib.visualization.arrayToDataTable(rawData);
+            var chartData = _this20.gLib.visualization.arrayToDataTable(rawData);
 
             var options = {
               title: 'Currently On Ventilator (UT)',
@@ -1781,22 +1999,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               height: 700,
               seriesType: 'bars'
             };
-            var ventilatorChart = new _this10.gLib.visualization.ComboChart(document.getElementById('ventilator'));
+            var ventilatorChart = new _this20.gLib.visualization.ComboChart(document.getElementById('ventilator'));
             ventilatorChart.draw(chartData, options);
           });
         }
       }]);
 
       return StateVentilatorComponent;
-    }();
+    }(_covidcomponent__WEBPACK_IMPORTED_MODULE_1__["CovidComponent"]);
 
     StateVentilatorComponent.ɵfac = function StateVentilatorComponent_Factory(t) {
-      return new (t || StateVentilatorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]));
+      return new (t || StateVentilatorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]));
     };
 
     StateVentilatorComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: StateVentilatorComponent,
       selectors: [["app-stateventilator"]],
+      features: [_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵInheritDefinitionFeature"]],
       decls: 1,
       vars: 0,
       consts: [["id", "ventilator"]],
@@ -1819,11 +2038,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         }]
       }], function () {
         return [{
-          type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"]
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
         }, {
-          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_2__["GoogleChartService"]
+          type: _google_chart_google_chart_service__WEBPACK_IMPORTED_MODULE_3__["GoogleChartService"]
         }, {
-          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_3__["CovidTrackingService"]
+          type: src_app_covidtracking_covidtracking_service__WEBPACK_IMPORTED_MODULE_4__["CovidTrackingService"]
         }];
       }, null);
     })();
@@ -2074,11 +2293,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AppHttpInterceptorService, [{
         key: "intercept",
         value: function intercept(req, next) {
-          var _this11 = this;
+          var _this21 = this;
 
           return next.handle(req).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["catchError"])(function (err) {
             if (err instanceof _angular_common_http__WEBPACK_IMPORTED_MODULE_0__["HttpErrorResponse"]) {
-              _this11.onError(err);
+              _this21.onError(err);
             }
 
             return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])(err);

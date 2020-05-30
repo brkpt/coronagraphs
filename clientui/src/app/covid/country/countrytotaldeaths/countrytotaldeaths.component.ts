@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GoogleChartService } from '../../../google-chart/google-chart.service';
+import { CovidComponent } from '../../covidcomponent';
 import {
   CovidTrackingService,
   USHistoricalDaily,
@@ -20,34 +21,16 @@ class TotalDeaths {
   templateUrl: './countrytotaldeaths.component.html',
   styleUrls: ['./countrytotaldeaths.component.css']
 })
-export class CountryTotalDeathsComponent implements OnInit {
-  private gLib: any = null;
-
+export class CountryTotalDeathsComponent extends CovidComponent {
   constructor(
     route: ActivatedRoute,
-    private chartServices: GoogleChartService,
-    private covidTrackingServices: CovidTrackingService
-  ) { }
-
-  ngOnInit() {
-    this.checkLoading();
-  }
-  
-  private checkLoading() {
-    if (this.chartServices.getLoaded()) {
-      this.gLib = this.chartServices.getGoogle();
-      this.getCountryDaily();
-    } else {
-      // Check again in 3 seconds
-      setTimeout(this.checkLoading, 1000);
-    }
+    protected chartServices: GoogleChartService,
+    protected covidTrackingServices: CovidTrackingService
+  ) { 
+    super(chartServices, covidTrackingServices);
   }
 
-  public convertDate(oldDate: string) {
-    return oldDate.slice(4, 6) + '-' + oldDate.slice(6, 8) + '-' + oldDate.slice(0, 4);
-  }
-
-  public getCountryDaily() {
+  public loadData() {
     this.covidTrackingServices.getCountryDaily().subscribe((data: USHistoricalDaily[]) => {
       // Collect the data
       let sorted = data.sort((a: USHistoricalDaily, b: USHistoricalDaily) => {

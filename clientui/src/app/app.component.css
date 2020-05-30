@@ -30,14 +30,24 @@
   padding-right: 12px;
 }
 
+.displayContainer {
+  display: grid;
+  grid-template-rows: 130 auto;
+  font-family: sourceSansPro;
+}
+
 .headerContainer {
   color: #ffffff;
   background-color: #0875d4;
   font-size: 100px;
   text-align: center;
+  border-top: solid;
+  border-right: solid;
+  border-left: solid;
+  border-color: lightgray;
 }
-.displayContainer {
-  display: grid;
-  grid-template-rows: 130 auto;
-  font-family: sourceSansPro;
+
+.graphContainer {
+  border: solid;
+  border-color: lightgray;
 }

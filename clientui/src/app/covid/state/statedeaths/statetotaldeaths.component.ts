@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GoogleChartService } from '../../../google-chart/google-chart.service';
+import { CovidComponent } from '../../covidcomponent';
 import { 
     CovidTrackingService,
     StateHistorical,
@@ -11,34 +12,16 @@ import {
   templateUrl: './statetotaldeaths.component.html',
   styleUrls: ['./statetotaldeaths.component.css']
 })
-export class StateTotalDeathsComponent implements OnInit {
-  private gLib: any = null;
+export class StateTotalDeathsComponent extends CovidComponent {
   constructor(
       route: ActivatedRoute, 
-      private chartServices: GoogleChartService, 
-      private covidTrackingServices: CovidTrackingService
+      protected chartServices: GoogleChartService, 
+      protected covidTrackingServices: CovidTrackingService
   ) {
-  }
-
-  ngOnInit() {
-      this.checkLoading();
-  }
-
-  private checkLoading() {
-      if(this.chartServices.getLoaded()) {
-          this.gLib = this.chartServices.getGoogle();
-          this.getStateHistorical();
-      } else {
-          // Check again in 3 seconds
-          setTimeout(this.checkLoading, 1000);
-      }
-  }
-
-  public convertDate(oldDate: string) {
-      return oldDate.slice(4,6) + '-' + oldDate.slice(6,8) + '-' + oldDate.slice(0,4);
+    super(chartServices, covidTrackingServices);
   }
   
-  private getStateHistorical() {
+  protected loadData() {
     let state='UT';
     this.covidTrackingServices.getHistoricalByState(state).subscribe((data: StateHistorical[]) => {
         const stateData = data.sort((a: StateHistorical, b: StateHistorical) => {

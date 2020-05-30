@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo kill -9 java
+sudo rm -rf coronagraphs-1.0-SNAPSHOT
+unzip coronagraphs-1.0-SNAPSHOT.zip
+sudo coronagraphs-1.0-SNAPSHOT/bin/coronagraphs -Dplay.http.secret.key=TheQuickBrownFox -Dhttp.port=80 &
+
