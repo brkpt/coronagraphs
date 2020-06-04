@@ -83,8 +83,8 @@ export interface StateHistorical {
     providedIn: 'root'
 })
 export class CovidTrackingService {
-  //private dataHost = 'http://ec2-3-95-10-127.compute-1.amazonaws.com';
-  private dataHost = 'http://localhost';
+  private dataHost = 'http://ec2-3-95-10-127.compute-1.amazonaws.com';
+  //private dataHost = 'http://localhost';
   private usData = '/api/us/current';
   private usDaily = '/api/us/daily';
   private stateHistorical = '/api/states/historical';
