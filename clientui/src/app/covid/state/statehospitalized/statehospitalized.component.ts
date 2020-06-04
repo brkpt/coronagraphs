@@ -27,10 +27,20 @@ export class StateHospitalizedComponent extends CovidComponent {
         return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
       });
 
-      let rawData: any[][] = [['Date', 'Hospitalizations']];
-      stateData.forEach((d: StateHistorical) => {
-        rawData.push([this.convertDate(d.date.toString()), d.hospitalizedIncrease]);
+      let rawData: any[][] = [['Date', 'Hospitalizations', '3-Day SMA', '7-Day SMA']];
+      let hospitalizations = stateData.map( (d: StateHistorical) => {
+        if(Math.abs(d.hospitalizedIncrease) > 100) {
+          return 0
+        } else {
+          return d.hospitalizedIncrease;
+        }
       });
+      rawData.push([this.convertDate(stateData[0].date.toString()), hospitalizations[0], hospitalizations[0], hospitalizations[0]]);
+      for(let index=0; index<stateData.length; index++) {
+        let sma3 = this.getSma(hospitalizations, index, 3);
+        let sma7 = this.getSma(hospitalizations, index, 7);
+        rawData.push([this.convertDate(stateData[index].date.toString()), Math.abs(hospitalizations[index]), sma3, sma7]);
+      }
       let chartData = this.gLib.visualization.arrayToDataTable(rawData);
 
       let options = {
@@ -38,9 +48,22 @@ export class StateHospitalizedComponent extends CovidComponent {
         width: 1100,
         height: 700,
         seriesType: 'bars',
+        series: {
+          0: {
+            color: 'blue'
+          },
+          1: {
+            type: 'line',
+            color: 'orange'
+          },
+          2: {
+            type: 'line',
+            color: 'red'
+          }
+        }
       };
 
-      let totalDeathChart = new this.gLib.visualization.ComboChart(document.getElementById('hospitalizations'));
+      let totalDeathChart = new this.gLib.visualization.ComboChart(document.getElementById('statehospitalizations'));
       totalDeathChart.draw(chartData, options);
     });
   }

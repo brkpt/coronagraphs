@@ -70,7 +70,7 @@ export class CountryDailyDeathsComponent extends CovidComponent {
         }
       }
 
-      let rawData: any[][] = [['Date', 'Deaths', '3SMA', '7SMA']];
+      let rawData: any[][] = [['Date', 'Deaths', '3-day SMA', '7-day SMA']];
       dailyDeaths.forEach((datum: DailyDeaths) => {
         let bar = [datum.date, datum.deaths, datum.day3sma, datum.day7sma];
         rawData.push(bar);
