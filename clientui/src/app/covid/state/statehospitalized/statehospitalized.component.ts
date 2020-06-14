@@ -28,18 +28,33 @@ export class StateHospitalizedComponent extends CovidComponent {
       });
 
       let rawData: any[][] = [['Date', 'Hospitalizations', '3-Day SMA', '7-Day SMA']];
-      let hospitalizations = stateData.map( (d: StateHistorical) => {
-        if(Math.abs(d.hospitalizedIncrease) > 100) {
-          return 0
+      let currentHospitalizations = stateData.map( (d: StateHistorical) => {
+        if(!!d.hospitalizedCurrently) {
+          return d.hospitalizedCurrently;
         } else {
-          return d.hospitalizedIncrease;
+          return 0;
         }
       });
-      rawData.push([this.convertDate(stateData[0].date.toString()), hospitalizations[0], hospitalizations[0], hospitalizations[0]]);
+
+      rawData.push(
+        [
+          this.convertDate(stateData[0].date.toString()), 
+          currentHospitalizations[0],
+          currentHospitalizations[0],
+          currentHospitalizations[0],
+        ]
+      );
       for(let index=0; index<stateData.length; index++) {
-        let sma3 = this.getSma(hospitalizations, index, 3);
-        let sma7 = this.getSma(hospitalizations, index, 7);
-        rawData.push([this.convertDate(stateData[index].date.toString()), Math.abs(hospitalizations[index]), sma3, sma7]);
+        let sma3 = this.getSma(currentHospitalizations, index, 3);
+        let sma7 = this.getSma(currentHospitalizations, index, 7);
+        rawData.push(
+          [
+            this.convertDate(stateData[index].date.toString()), 
+            currentHospitalizations[index],
+            sma3, 
+            sma7
+          ]
+        );
       }
       let chartData = this.gLib.visualization.arrayToDataTable(rawData);
 

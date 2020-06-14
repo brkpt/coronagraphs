@@ -1,21 +1,9 @@
 @font-face {
     font-family: sourceSansPro;
-    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com/fonts/SourceSansPro-Light.ttf)
+    src: url(https://www.coronagraphs.online/fonts/SourceSansPro-Light.ttf)
 }
 
 @font-face { 
     font-family: sourceSansProBold;
-    src: url(http://ec2-3-95-10-127.compute-1.amazonaws.com/fonts/SourceSansPro-Bold.ttf)
+    src: url(https://www.coronagraphs.online/fonts/SourceSansPro-Bold.ttf)
 }
-
-/*
-@font-face {
-    font-family: sourceSansPro;
-    src: url(http://localhost/fonts/SourceSansPro-Light.ttf)
-}
-
-@font-face { 
-    font-family: sourceSansProBold;
-    src: url(http://localhost/fonts/SourceSansPro-Bold.ttf)
-}
-*/
