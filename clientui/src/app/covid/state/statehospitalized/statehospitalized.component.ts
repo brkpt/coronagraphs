@@ -24,8 +24,14 @@ export class StateHospitalizedComponent extends CovidComponent {
   protected loadData() {
     this.covidTrackingServices.getHistoricalByState('ut').subscribe((data: StateHistorical[]) => {
       const stateData = data.sort((a: StateHistorical, b: StateHistorical) => {
-        return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
-      });
+          return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+      }).filter( (d: StateHistorical) => {
+        if(d.hospitalizedCurrently !== null) {
+          return true;
+        } else {
+          return false;
+        }
+      })
 
       let rawData: any[][] = [['Date', 'Hospitalizations', '3-Day SMA', '7-Day SMA']];
       let currentHospitalizations = stateData.map( (d: StateHistorical) => {
