@@ -843,6 +843,13 @@ class StateHospitalizedComponent extends _covidcomponent__WEBPACK_IMPORTED_MODUL
         this.covidTrackingServices.getHistoricalByState('ut').subscribe((data) => {
             const stateData = data.sort((a, b) => {
                 return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+            }).filter((d) => {
+                if (d.hospitalizedCurrently !== null) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
             });
             let rawData = [['Date', 'Hospitalizations', '3-Day SMA', '7-Day SMA']];
             let currentHospitalizations = stateData.map((d) => {

@@ -1509,6 +1509,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.covidTrackingServices.getHistoricalByState('ut').subscribe(function (data) {
             var stateData = data.sort(function (a, b) {
               return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+            }).filter(function (d) {
+              if (d.hospitalizedCurrently !== null) {
+                return true;
+              } else {
+                return false;
+              }
             });
             var rawData = [['Date', 'Hospitalizations', '3-Day SMA', '7-Day SMA']];
             var currentHospitalizations = stateData.map(function (d) {

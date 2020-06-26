@@ -33,7 +33,7 @@ export class StateHospitalizedComponent extends CovidComponent {
         }
       })
 
-      let rawData: any[][] = [['Date', 'Hospitalizations', '3-Day SMA', '7-Day SMA']];
+      let rawData: any[][] = [['Date', 'In ICU', 'In Hospital', '3-Day SMA', '7-Day SMA']];
       let currentHospitalizations = stateData.map( (d: StateHistorical) => {
         if(!!d.hospitalizedCurrently) {
           return d.hospitalizedCurrently;
@@ -42,10 +42,19 @@ export class StateHospitalizedComponent extends CovidComponent {
         }
       });
 
+      let currentIcu = stateData.map( (d: StateHistorical) => {
+        if(!!d.inIcuCurrently) {
+          return d.inIcuCurrently;
+        } else {
+          return 0;
+        }
+      });
+
       rawData.push(
         [
           this.convertDate(stateData[0].date.toString()), 
-          currentHospitalizations[0],
+          currentIcu[0],
+          currentHospitalizations[0] - currentIcu[0],
           currentHospitalizations[0],
           currentHospitalizations[0],
         ]
@@ -56,7 +65,8 @@ export class StateHospitalizedComponent extends CovidComponent {
         rawData.push(
           [
             this.convertDate(stateData[index].date.toString()), 
-            currentHospitalizations[index],
+            currentIcu[index],
+            currentHospitalizations[index] - currentIcu[index],
             sma3, 
             sma7
           ]
@@ -69,15 +79,19 @@ export class StateHospitalizedComponent extends CovidComponent {
         width: 1100,
         height: 700,
         seriesType: 'bars',
+        isStacked: true,
         series: {
           0: {
-            color: 'blue'
+            color: 'grey'
           },
           1: {
+            color: 'blue'
+          },
+          2: {
             type: 'line',
             color: 'orange'
           },
-          2: {
+          3: {
             type: 'line',
             color: 'red'
           }
